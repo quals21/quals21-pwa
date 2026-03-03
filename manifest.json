@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "www.quals21.wordpress",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "www.quals21.wordpress",
+  "start_url": "/",
+  "theme_color": "#000000",
+  "id": "com.quals21.blog",
+  "description": "Official blog of Chinzakhual Khuptong sharing articles on education, technology, aviation careers, digital safety, finance awareness, and community insights from India."
+}
