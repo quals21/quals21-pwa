@@ -1,42 +1,33 @@
-<body style="margin:0; font-family: Arial, sans-serif; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; text-align:center;">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>21Kaetys Blog</title>
+<link rel="manifest" href="manifest.json">
+</head>
 
-  <div>
-    <img src="icon-192.png" style="width:100px; border-radius:20px;">
-    <h2 style="margin-top:20px;">Quals21 Blog</h2>
-    <p>Upgraded version of Khualpu's Thugelh Te Apps</p>
-    <p style="font-size:14px; color:gray;">Loading...</p>
-  </div>
+<body style="font-family:sans-serif;text-align:center;padding:20px;max-width:400px;margin:auto;">
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
-    }
+<h3>21Kaetys Blog</h3>
+<p>By Chinzakhual Khuptong</p>
 
-    <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js');
-  }
+<hr>
+
+<p><a href="https://quals21.wordpress.com/" target="_blank">Visit Full Blog</a></p>
+<p><a href="https://quals21.wordpress.com/category/technology/" target="_blank">Technology</a></p>
+<p><a href="https://quals21.wordpress.com/category/education/" target="_blank">Education</a></p>
+<p><a href="https://quals21.wordpress.com/category/scam-alert/" target="_blank">Scam Alerts</a></p>
+
+<hr>
+
+<p style="font-size:12px;">Install this app for quick access</p>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js');
+}
 </script>
-  </script>
 
 </body>
-<p style="text-align:center; font-weight:bold;">
-📲 Tap 3 dots → Install App → Add to Home Screen
-</p>
-<div style="text-align:center; margin-top:20px;">
-  <p><strong>Share This App:</strong></p>
-
-  <a href="https://wa.me/?text=https://quals21.github.io/quals21-pwa/" target="_blank">
-    📲 Share on WhatsApp
-  </a>
-  <br><br>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://quals21.github.io/quals21-pwa/" target="_blank">
-    👍 Share on Facebook
-  </a>
-  <br><br>
-
-  <a href="https://twitter.com/intent/tweet?url=https://quals21.github.io/quals21-pwa/" target="_blank">
-    🐦 Share on X
-  </a>
-</div>
+</html>
