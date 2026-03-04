@@ -12,7 +12,6 @@
   --bg: #f4f6f8;
   --card: #ffffff;
   --text: #1a1a1a;
-  --subtext: #666;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,31 +19,22 @@
     --bg: #121212;
     --card: #1e1e1e;
     --text: #ffffff;
-    --subtext: #aaa;
   }
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
 .header {
+  background: var(--primary);
+  color: white;
   padding: 18px;
   text-align: center;
   font-weight: 700;
-  font-size: 20px;
-  background: var(--primary);
-  color: white;
-}
-
-.subheader {
-  text-align: center;
-  font-size: 13px;
-  color: var(--subtext);
-  margin-top: 4px;
 }
 
 .container {
@@ -55,29 +45,21 @@ body {
 
 .card {
   background: var(--card);
-  padding: 18px;
-  margin-bottom: 15px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: 0.15s ease;
-}
-
-.card:active {
-  transform: scale(0.97);
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 a {
   text-decoration: none;
   color: var(--primary);
-  font-size: 16px;
   font-weight: 600;
 }
 
-.footer {
+.loading {
   text-align: center;
-  font-size: 12px;
-  color: var(--subtext);
-  margin-top: 25px;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -86,45 +68,43 @@ a {
 
 <div class="header">
 21Kaetys Blog
-<div class="subheader">Insights • Technology • Education • Awareness</div>
 </div>
 
 <div class="container">
-
-<div class="card">
-<a href="https://quals21.wordpress.com/" target="_blank">
-🌍 Explore Full Website
-</a>
-</div>
-
-<div class="card">
-<a href="https://quals21.wordpress.com/category/technology/" target="_blank">
-💻 Technology Articles
-</a>
-</div>
-
-<div class="card">
-<a href="https://quals21.wordpress.com/category/education/" target="_blank">
-📚 Education & Career
-</a>
-</div>
-
-<div class="card">
-<a href="https://quals21.wordpress.com/category/scam-alert/" target="_blank">
-⚠️ Scam & Cyber Awareness
-</a>
-</div>
-
-<div class="footer">
-Install this app for quick global access
-</div>
-
+<div id="posts" class="loading">Loading latest posts...</div>
 </div>
 
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js');
 }
+
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://quals21.wordpress.com/feed/"))
+.then(response => response.json())
+.then(data => {
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(data.contents, "text/xml");
+  const items = xml.querySelectorAll("item");
+
+  let output = "";
+  items.forEach((item, index) => {
+    if (index < 5) {
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+
+      output += `
+        <div class="card">
+          <a href="${link}" target="_blank">${title}</a>
+        </div>
+      `;
+    }
+  });
+
+  document.getElementById("posts").innerHTML = output;
+})
+.catch(() => {
+  document.getElementById("posts").innerHTML = "Unable to load posts. Check connection.";
+});
 </script>
 
 </body>
