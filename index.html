@@ -4,19 +4,29 @@
   <meta charset="UTF-8">
   <title>Quals21 Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
- <link rel="manifest" href="manifest.json?v=2">
+  <link rel="manifest" href="manifest.json?v=3">
   <meta name="theme-color" content="#000000">
+</head>
+
+<body style="margin:0; font-family: Arial, sans-serif; text-align:center; padding:40px;">
+
+  <h2>Opening Quals21 Blog...</h2>
+  <p>If not redirected automatically, click below.</p>
+
+  <a href="https://quals21.wordpress.com/" 
+     style="display:inline-block; padding:12px 20px; background:black; color:white; text-decoration:none; border-radius:8px;">
+     Open Blog
+  </a>
 
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
 
-    window.location.href = "https://quals21.wordpress.com/";
+    setTimeout(function() {
+      window.location.href = "https://quals21.wordpress.com/";
+    }, 1500);
   </script>
 
-</head>
-<body>
 </body>
 </html>
