@@ -8,60 +8,76 @@
 
 <style>
 :root {
-  --primary: #1877f2;
-  --bg: #f0f2f5;
+  --primary: #0a66ff;
+  --bg: #f4f6f8;
   --card: #ffffff;
-  --text: #1c1e21;
+  --text: #1a1a1a;
+  --subtext: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #ffffff;
+    --subtext: #aaa;
+  }
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
 .header {
-  background: var(--primary);
-  padding: 16px;
+  padding: 18px;
   text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  background: var(--primary);
   color: white;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.5px;
+}
+
+.subheader {
+  text-align: center;
+  font-size: 13px;
+  color: var(--subtext);
+  margin-top: 4px;
 }
 
 .container {
-  padding: 16px;
-  max-width: 500px;
-  margin: auto;
+  max-width: 520px;
+  margin: 20px auto;
+  padding: 15px;
 }
 
 .card {
   background: var(--card);
   padding: 18px;
-  margin-bottom: 14px;
-  border-radius: 14px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  transition: transform 0.1s ease;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: 0.15s ease;
 }
 
 .card:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 a {
   text-decoration: none;
   color: var(--primary);
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .footer {
   text-align: center;
   font-size: 12px;
-  color: #65676b;
-  margin-top: 20px;
+  color: var(--subtext);
+  margin-top: 25px;
 }
 </style>
 </head>
@@ -70,36 +86,37 @@ a {
 
 <div class="header">
 21Kaetys Blog
+<div class="subheader">Insights • Technology • Education • Awareness</div>
 </div>
 
 <div class="container">
 
 <div class="card">
 <a href="https://quals21.wordpress.com/" target="_blank">
-🌍 Visit Full Blog
+🌍 Explore Full Website
 </a>
 </div>
 
 <div class="card">
 <a href="https://quals21.wordpress.com/category/technology/" target="_blank">
-💻 Technology
+💻 Technology Articles
 </a>
 </div>
 
 <div class="card">
 <a href="https://quals21.wordpress.com/category/education/" target="_blank">
-📚 Education
+📚 Education & Career
 </a>
 </div>
 
 <div class="card">
 <a href="https://quals21.wordpress.com/category/scam-alert/" target="_blank">
-⚠️ Scam Alerts
+⚠️ Scam & Cyber Awareness
 </a>
 </div>
 
 <div class="footer">
-Install this app for faster access
+Install this app for quick global access
 </div>
 
 </div>
