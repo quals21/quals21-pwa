@@ -5,23 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>21Kaetys Blog</title>
 <link rel="manifest" href="manifest.json">
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+}
+
+.header {
+  background: #1877f2;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container {
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+a {
+  text-decoration: none;
+  color: #1877f2;
+  font-weight: 500;
+}
+</style>
 </head>
 
-<body style="font-family:sans-serif;text-align:center;padding:20px;max-width:400px;margin:auto;">
+<body>
 
-<h3>21Kaetys Blog</h3>
-<p>By Chinzakhual Khuptong</p>
+<div class="header">
+21Kaetys Blog
+</div>
 
-<hr>
+<div class="container">
 
-<p><a href="https://quals21.wordpress.com/" target="_blank">Visit Full Blog</a></p>
-<p><a href="https://quals21.wordpress.com/category/technology/" target="_blank">Technology</a></p>
-<p><a href="https://quals21.wordpress.com/category/education/" target="_blank">Education</a></p>
-<p><a href="https://quals21.wordpress.com/category/scam-alert/" target="_blank">Scam Alerts</a></p>
+<div class="card">
+<a href="https://quals21.wordpress.com/" target="_blank">
+🌍 Visit Full Blog
+</a>
+</div>
 
-<hr>
+<div class="card">
+<a href="https://quals21.wordpress.com/category/technology/" target="_blank">
+💻 Technology
+</a>
+</div>
 
-<p style="font-size:12px;">Install this app for quick access</p>
+<div class="card">
+<a href="https://quals21.wordpress.com/category/education/" target="_blank">
+📚 Education
+</a>
+</div>
+
+<div class="card">
+<a href="https://quals21.wordpress.com/category/scam-alert/" target="_blank">
+⚠️ Scam Alerts
+</a>
+</div>
+
+</div>
 
 <script>
 if ('serviceWorker' in navigator) {
