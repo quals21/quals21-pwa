@@ -27,6 +27,7 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  padding-bottom: 70px;
 }
 
 .header {
@@ -57,9 +58,21 @@ a {
   font-weight: 600;
 }
 
-.loading {
-  text-align: center;
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--card);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+.bottom-nav a {
   font-size: 14px;
+  text-align: center;
+  color: var(--primary);
 }
 </style>
 </head>
@@ -71,12 +84,22 @@ a {
 </div>
 
 <div class="container">
-<div id="posts" class="loading">Loading latest posts...</div>
+<div id="posts">Loading latest posts...</div>
+</div>
+
+<div class="bottom-nav">
+  <a href="#" onclick="loadHome()">🏠 Home</a>
+  <a href="https://quals21.wordpress.com/category/technology/" target="_blank">💻 Tech</a>
+  <a href="https://quals21.wordpress.com/" target="_blank">🌍 Website</a>
 </div>
 
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js');
+}
+
+function loadHome() {
+  location.reload();
 }
 
 fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://quals21.wordpress.com/feed/"))
@@ -103,7 +126,7 @@ fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://quals2
   document.getElementById("posts").innerHTML = output;
 })
 .catch(() => {
-  document.getElementById("posts").innerHTML = "Unable to load posts. Check connection.";
+  document.getElementById("posts").innerHTML = "Unable to load posts.";
 });
 </script>
 
