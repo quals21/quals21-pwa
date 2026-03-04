@@ -12,9 +12,11 @@
       navigator.serviceWorker.register('service-worker.js');
     }
 
-    setTimeout(function() {
-      window.location.href = "https://quals21.wordpress.com/";
-    }, 2000);
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+</script>
   </script>
 
 </body>
